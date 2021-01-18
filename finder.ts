@@ -250,6 +250,7 @@ function index(input: Element): number | null {
       break
     }
 
+    // 判断是第几个
     child = child.nextSibling
   }
 
@@ -264,6 +265,7 @@ function nthChild(node: Node, i: number): Node {
 }
 
 function dispensableNth(node: Node) {
+  // WOO TAG startWith("#")是要去掉什么？
   return node.name !== "html" && !node.name.startsWith("#")
 }
 
@@ -275,10 +277,12 @@ function maybe(...level: (Node | null)[]): Node[] | null {
   return null
 }
 
+// WOO TAG value is T 是干嘛用的， 我写的话可能是用了 boolean
 function notEmpty<T>(value: T | null | undefined): value is T {
   return value !== null && value !== undefined
 }
 
+// WOO TAG generator 学习一波？
 function* combinations(stack: Node[][], path: Node[] = []): Generator<Node[]> {
   if (stack.length > 0) {
     for (let node of stack[0]) {
@@ -338,6 +342,7 @@ const defaultOptions = {
   "wrap": false
 }
 
+// WOO TAG 没看懂， 待定
 function cssesc(string: string, opt: Partial<typeof defaultOptions> = {}) {
   const options = {...defaultOptions, ...opt}
   if (options.quotes != "single" && options.quotes != "double") {

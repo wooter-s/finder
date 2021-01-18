@@ -1,0 +1,50 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>
+        How to Disable a CSS :hover effect.
+    </title>
+    <style>
+        .element {
+            height: 100px;
+            width: 200px;
+            background: green;
+            color: white;
+            margin: 0 auto;
+        }
+        .hover:hover {
+            background: blue;
+        }
+    </style>
+</head>
+<body style = "text-align:center;" id = "body">
+<h1 id = "h1" style = "color:green;" >
+    GeeksForGeeks
+</h1>
+<p id = "GFG_UP" style = "font-size: 15px;
+           font-weight: bold;">
+</p>
+<div id = "div" class = "element hover">
+    Hover It
+</div>
+<br>
+<button onclick = "gfg_Run()">
+    Click here
+</button>
+<p id = "GFG_DOWN" style = "font-size: 23px; font-weight:
+           bold; color: green; ">
+</p>
+<script>
+    var el_up = document.getElementById("GFG_UP");
+    var el_down = document.getElementById("GFG_DOWN");
+    var heading = document.getElementById("h1");
+    var div = document.getElementById("div");
+    el_up.innerHTML =
+        "Click on the button to remove the  CSS:hover effect.";
+    function gfg_Run() {
+        document.getElementById('div').classList.remove("hover");
+        el_down.innerHTML = "Hover effect Removed";
+    }
+</script>
+</body>
+</html>
